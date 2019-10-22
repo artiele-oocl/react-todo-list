@@ -14,10 +14,12 @@ class Todo extends React.Component {
     }
     addTodo = (e) => {
         e.preventDefault();
-        this.state.todoList.push({
-            content: this.state.inputValue,
-            status: 0
-        });
+        if (this.state.inputValue) {
+            this.state.todoList.push({
+                content: this.state.inputValue,
+                status: 0
+            });
+        }
         this.setState({inputValue: ''});
     }
     render() {
